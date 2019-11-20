@@ -22,6 +22,12 @@ class ProjectsController extends Controller
         return view('projects.index', compact('projects'));
     }
 
+    public function show($id)
+    {
+        $project = Project::findOrFail($id);
+        return view('projects.show',compact('project'));
+    }
+
     public function create(){
 
         return view('projects.create');
@@ -45,8 +51,8 @@ class ProjectsController extends Controller
 
         public function edit($id)
         {
-            $project = Project::find($id);
-            return view('projects.edit', compact('project'));
+            $projects = Project::find($id);
+            return view('projects.edit', compact('projects'));
         }
 
         

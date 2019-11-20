@@ -35,7 +35,7 @@
   
 
 
-    // Route::get('/players', 'PlayersController@index');
+    Route::resource('players', 'PlayersController');
 
     Route::resource('projects', 'ProjectsController');
 

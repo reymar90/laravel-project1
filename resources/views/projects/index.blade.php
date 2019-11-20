@@ -9,9 +9,22 @@
 <body>
     <h1>Projects</h1>
 
-    @foreach ($projects as $project)
-        <li>{{$project->title}}</li>
-    @endforeach
-    
+    <ul style="list-style-type:none">
+            @foreach ($projects as $project)
+            <li>{{$project->id}} - <a href="/projects/{{$project->id}}">{{$project->title}}</a>  -  {{$project->description}}</li>
+            @endforeach
+    </ul>
+
+    <div style="form-inline">
+        <div>
+        <button type="button" class="btn btn-primary"><a style="color:white;" href="/projects/create">Create</a></button>
+             
+        </div>
+        
+    </div>
+   
+   
+
+  
 </body>
 </html>

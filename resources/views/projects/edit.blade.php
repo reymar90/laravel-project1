@@ -54,7 +54,7 @@
             </div>
     </form>
 
-    <form method="POST" action="/projects/{{$project->id}}">
+    <form method="POST" action="/projects/{{$projects->id}}">
 
         {{method_field('DELETE')}}
         {{ csrf_field() }}

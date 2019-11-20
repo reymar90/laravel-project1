@@ -53,15 +53,9 @@ class ExampleAPIController extends Controller
         $data_added = $this->player->insertData($input);
         return response()->json(['success' => true,'data'=>$data_added], 200);
 
-
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+  
     public function show($id)
     {  
         $data = $this->player->getDataById($id);

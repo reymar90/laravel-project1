@@ -30,9 +30,9 @@ class UsersController extends Controller
             $validator = Validator::make($request->all(), [
                 'first_name' => 'required',
                 'last_name' => 'required',
-                'age' => 'required',
-                'email' => 'required',
-                'contact_number' => 'required',
+                'age' => 'required|numeric',
+                'email' => 'required|unique:users,email',
+                'contact_number'  => 'required|regex:/(09)[0-9]{9}/',
                 'address' => 'required'
             ]);
             
@@ -79,7 +79,7 @@ class UsersController extends Controller
             'last_name' => 'required',
             'age' =>'required',
             'email' =>'required',
-            'contact_number' =>'required',
+            'contact_number' =>'required|regex:/(09)[0-9]{9}/',
             'address' =>'required'
         ]);
 

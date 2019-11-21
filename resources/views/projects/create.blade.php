@@ -16,11 +16,11 @@
         {{ csrf_field() }}
 
         <div>
-            <input type="text" name="title" placeholder="Title">
+            <input type="text" name="title" placeholder="Title" required>
         </div>
 
         <div>
-            <textarea name="description" placeholder="Description" cols="30" rows="10"></textarea>
+            <textarea name="description" placeholder="Description" cols="30" rows="10" required></textarea>
         </div>
         
         <div>

@@ -17,36 +17,43 @@ class ProjectsController extends Controller
         // $users = User::all();
 
         //  return $users;
-        // return $projects;
+        return $projects;
 
-        return view('projects.index', compact('projects'));
+        // return view('projects.index', compact('projects'));
     }
 
     public function show(Project $project)
     {
-        // $project = Project::findOrFail($id);
-        return view('projects.show',compact('project'));
+        // $project = Project::findOrFail();
+        return $project;
+        // return view('projects.show',compact('project'));
     }
 
-    public function create(){
+    // public function create(Project $project){
 
-        return view('projects.create');
+        // return view('projects.create');
+        // $projects = Project::create($request->all());
+        // return response()->json(['success' => true,'data'=>$projects], 200);
 
-    }
+    // }
 
-    public function store(){
+    public function store(Project $project){
 
-       Project::create(request(['title', 'description']));
+    //    Project::create(request(['title', 'description']));
 
-        // $projects = new Project();
-        // $projects->title = request('title');
-        // $projects->description = request('description');
+    //     $projects = new Project();
+    //     $projects->title = request('title');
+    //     $projects->description = request('description');
 
-        // $projects->save();
+    //     $projects->save();
 
-        return redirect('/projects');
+        // return redirect('/projects');
 
         // return request()->all();
+        $projects = Project::create($request->all());
+        return response()->json(['success' => true,'data'=>$projects], 200);
+
+
 
     }
 

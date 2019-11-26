@@ -26,6 +26,15 @@
         <div>
             <button type="submit">Submit</button>
         </div>
+
+        <div >
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li style="color:black">{{$error}}</li>
+                @endforeach
+               
+            </ul>
+        </div>
     </form>
     
 </body>
